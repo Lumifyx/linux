@@ -9,8 +9,8 @@
 #include "rk3566-tv-lumifyx-tx6.dtsi"
 #include "rk3568-android.dtsi"
 / {
-	model = "Rockchip RK3566 BOX DEMO V10 ANDROID Board";
-	compatible = "rockchip,rk3566-box-demo-v10", "rockchip,rk3566";
+	model = "Lumifyx Tx6 ANDROID11";
+	compatible = "lumifyx,tx6", "rockchip,rk3566";
 
 	gpio-leds {
 		compatible = "gpio-leds";

@@ -15,14 +15,11 @@
 	gpio-leds {
 		compatible = "gpio-leds";
 
-		ir-led {
-			gpios = <&gpio4 RK_PC5 GPIO_ACTIVE_HIGH>;
-			default-state = "off";
-		};
-
 		work-led {
+			lable = "blue";
 			gpios = <&gpio0 RK_PC3 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "timer";
+			default-state = "on";
 		};
 	};
 

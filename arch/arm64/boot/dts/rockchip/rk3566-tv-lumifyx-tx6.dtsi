@@ -74,6 +74,16 @@
 			#sound-dai-cells = <0>;
 	};
 
+	 vcc5v0_sys: vcc5v0-sys {
+                compatible = "regulator-fixed";
+                regulator-name = "vcc5v0_sys";
+                regulator-always-on;
+                regulator-boot-on;
+                regulator-min-microvolt = <5000000>;
+                regulator-max-microvolt = <5000000>;
+                vin-supply = <&dc_5v>;
+        };
+
 	vcc3v3_sys: vcc3v3-sys {
 		compatible = "regulator-fixed";
 		regulator-name = "vcc3v3_sys";
@@ -91,16 +101,6 @@
 		regulator-boot-on;
 		regulator-min-microvolt = <3300000>;
 		regulator-max-microvolt = <3300000>;
-		vin-supply = <&dc_5v>;
-	};
-
-	vcc5v0_sys: vcc5v0-sys {
-		compatible = "regulator-fixed";
-		regulator-name = "vcc5v0_sys";
-		regulator-always-on;
-		regulator-boot-on;
-		regulator-min-microvolt = <5000000>;
-		regulator-max-microvolt = <5000000>;
 		vin-supply = <&dc_5v>;
 	};
 
@@ -122,17 +122,7 @@
 		regulator-min-microvolt = <3300000>;
 		regulator-max-microvolt = <3300000>;
 		vin-supply = <&vcc3v3_sys>;
-	};
-/*
-	vdd_fixed: vdd-fixed {
-		compatible = "regulator-fixed";
-		regulator-name = "vdd_fixed";
-		regulator-min-microvolt = <950000>;
-		regulator-max-microvolt = <950000>;
-		regulator-always-on;
-		regulator-boot-on;
-		vin-supply = <&vcc5v0_sys>;
-	}; */
+	}; 
 
 	vdd_ddr: vdd-ddr{
 		compatible = "regulator-fixed";
@@ -185,7 +175,7 @@
 
 	vcca_1v8: vcca-1v8 {
 		compatible = "regulator-fixed";
-                regulator-name = "vdda_0v9";
+                regulator-name = "vcca_1v8";
                 regulator-min-microvolt = <1800000>;
                 regulator-max-microvolt = <1800000>;
                 regulator-always-on;

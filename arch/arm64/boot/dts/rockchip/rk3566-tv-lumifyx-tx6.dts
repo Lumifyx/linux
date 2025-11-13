@@ -209,7 +209,7 @@
 };
 
 &sata2 {
-	status = "okay";
+	status = "disabled";
 };
 
 &sdmmc0 {

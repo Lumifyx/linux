@@ -30,6 +30,7 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&wifi_enable_h &wifi_32k>;
 		reset-gpios = <&gpio2 RK_PB1 GPIO_ACTIVE_LOW>;
+		states="okay";
 	};
 
 	vcc3v3_sd: vcc3v3-sd-regulator {
@@ -228,7 +229,7 @@
 };
 
 &sdmmc1 {
-	max-frequency = <150000000>;
+	max-frequency = <100000000>;
 	supports-sdio;
 	bus-width = <4>;
 	disable-wp;

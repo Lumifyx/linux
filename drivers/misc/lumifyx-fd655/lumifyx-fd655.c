@@ -551,7 +551,7 @@ void fd655_disp_powerDown(void){
 	FD655_Disp(DIG5,0x00,pdata);
 	FD655_Command(0x00,pdata);
 	gpio_direction_output(pdata->dat_pin, 0);
-    gpio_direction_output(pdata->clk_pin, 0);
+        gpio_direction_output(pdata->clk_pin, 0);
 
 }
 
@@ -562,7 +562,7 @@ static int fd655_dev_open(struct inode *inode, struct file *file)
     return 0;
 }
 
-static ssize_t  fd655_dev_write(struct file *filp, const char __user *buf,		size_t count, loff_t *f_pos)
+static ssize_t  fd655_dev_write(struct file *filp, const char __user *buf,size_t count, loff_t *f_pos)
 {
 
 		FD655_DEV *dev;
@@ -601,7 +601,7 @@ static ssize_t  fd655_dev_write(struct file *filp, const char __user *buf,		size
 	    } 
 
 
-		printk("fd655_dev_write count : %d\n",count );
+	//	printk("fd655_dev_write count : %d\n", count );
 		return status;
 
 }

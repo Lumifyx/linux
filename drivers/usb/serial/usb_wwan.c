@@ -509,11 +509,18 @@ static struct urb *usb_wwan_setup_urb(struct usb_serial_port *port,
 	if (intfdata->use_zlp && dir == USB_DIR_OUT)
 		urb->transfer_flags |= URB_ZERO_PACKET;
 
-	if (dir == USB_DIR_OUT) {
+/*	if (dir == USB_DIR_OUT) {
 		if ((desc->idVendor == cpu_to_le16(0x1286) &&
 		     desc->idProduct == cpu_to_le16(0x4e3c)))
 			urb->transfer_flags |= URB_ZERO_PACKET;
-	}
+	}*/
+	  if (dir == USB_DIR_OUT) {
+                   if ((desc->idVendor == cpu_to_le16(0x1286) &&desc->idProduct == cpu_to_le16(0x4e3c)))
+                           urb->transfer_flags |= URB_ZERO_PACKET;
+                       if (desc->idVendor == cpu_to_le16(0x2c7c))
+                       urb->transfer_flags |= URB_ZERO_PACKET;
+           }
+
 	return urb;
 }
 

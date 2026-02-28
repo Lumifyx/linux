@@ -227,7 +227,7 @@
 };
 
 &gpu {
-	mali-supply = <&vdd_gpu>;
+	mali-supply = <&vdd_logic>;
 	status = "okay";
 };
 
@@ -388,7 +388,7 @@
 };
 
 &rknpu {
-	rknpu-supply = <&vdd_npu>;
+	rknpu-supply = <&vdd_ddr>;
 	status = "okay";
 };
 
